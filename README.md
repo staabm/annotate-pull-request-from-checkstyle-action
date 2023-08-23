@@ -1,6 +1,6 @@
 # annotate-pull-request-from-checkstyle-action
 
-annotate-pull-request-from-checkstyle-action is a GitHub Action that uses cs2pr to  converts checkstyle XML files to GitHub PR annotations.
+annotate-pull-request-from-checkstyle-action is a GitHub Action that uses [cs2pr](https://github.com/staabm/annotate-pull-request-from-checkstyle) to converts checkstyle XML files to GitHub PR annotations.
 
 ![Context Example](https://github.com/mheap/phpunit-github-actions-printer/blob/master/phpunit-printer-context.png?raw=true)
 _Images from https://github.com/mheap/phpunit-github-actions-printer_
