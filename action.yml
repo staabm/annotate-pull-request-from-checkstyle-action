@@ -1,0 +1,49 @@
+name: cs2pr
+description: Convert checkstyle XML to GitHub PR annotations
+
+inputs:
+  graceful-warnings:
+    description: Don't exit with error codes if there are only warnings
+    required: false
+    default: ""
+  colorize:
+    description: Colorize the output (still compatible with Github Annotations)
+    required: false
+    default: ""
+  notices-as-warnings:
+    description: Convert notices to warnings (Github does not annotate notices otherwise)
+    required: false
+    default: ""
+  errors-as-warnings: 
+    description: Downgrade errors to warnings
+    required: false
+    default: ""
+  prepend-filename:
+    description: Prepend error 'filename' attribute to the message
+    required: false
+    default: ""
+  prepend-source:
+    description: Prepend error 'source' attribute to the message
+    required: false
+    default: ""
+  files:
+    description: The checkstyle XML files to convert to GitHub PR annotations separated by semicolons
+    required: true
+
+outputs: {}
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    CS2PR_GRACEFUL_WARNINGS: ${{ inputs.graceful-warnings }}
+    CS2PR_COLORIZE: ${{ inputs.colorize }}
+    CS2PR_NOTICES_AS_WARNINGS: ${{ inputs.notices-as-warnings }}
+    CS2PR_ERRORS_AS_WARNINGS: ${{ inputs.errors-as-warnings }}
+    CS2PR_PREPEND_FILENAME: ${{ inputs.prepend-filename }}
+    CS2PR_PREPEND_SOURCE: ${{ inputs.prepend-source }}
+    CS2PR_FILES: ${{ inputs.files }}
+
+branding:
+  icon: "file"
+  color: "purple"
