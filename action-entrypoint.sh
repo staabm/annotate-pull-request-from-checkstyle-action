@@ -13,4 +13,4 @@ FLAGS=()
 
 IFS=";" read -r -a FILES <<< "$CS2PR_FILES"
 
-cs2pr "${FLAGS[@]}" "${FILES[@]}"
+vendor/bin/cs2pr "${FLAGS[@]}" "${FILES[@]}"
